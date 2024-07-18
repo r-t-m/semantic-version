@@ -970,10 +970,7 @@ class DefaultCurrentCommitResolver {
     }
     ResolveAsync() {
         return __awaiter(this, void 0, void 0, function* () {
-            if (this.branch === 'HEAD') {
-                return (yield (0, CommandRunner_1.cmd)('git', 'rev-parse', 'HEAD')).trim();
-            }
-            return this.branch;
+            return (yield (0, CommandRunner_1.cmd)('git', 'rev-parse', this.branch)).trim();
         });
     }
     IsEmptyRepoAsync() {
